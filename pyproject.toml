@@ -1,0 +1,27 @@
+[build-system]
+requires = [
+    "setuptools>=80.4.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[project]
+name = "mfd-powermanagement"
+description = "Module for managing power (Raritan, APC, Digital Loggers, ipmi, etc.)"
+requires-python = ">=3.10, <3.14"
+version = "1.11.1"
+dynamic = ["dependencies"]
+license-files = ["LICENSE.md", "AUTHORS.md"]
+readme = {file = "README.md", content-type = "text/markdown"}
+
+[project.urls]
+Homepage = "https://github.com/intel/mfd"
+Repository = "https://github.com/intel/mfd-powermanagement"
+Issues = "https://github.com/intel/mfd-powermanagement/issues"
+Changelog = "https://github.com/intel/mfd-powermanagement/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+exclude = ["examples", "tests*", "sphinx-doc"]
