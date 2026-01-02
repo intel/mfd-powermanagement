@@ -54,12 +54,11 @@ class PDU(PowerManagement, ABC):
         Init of PDU.
 
         :param ip: IP address of PDU device.
-        :param udp_port: UDP port for SNMP connection. By default it is 161.
+        :param udp_port: UDP port for SNMP connection. By default, it is 161.
         :param community_string: Community to use for SNMP connection, available in configuration of PDU
         :param outlet_number: Optional Outlet number, when want to store it in object of PDU.
         """
         self._transport_target = None
-        self._snmp_engine = SnmpEngine()
         self._ip = ip
         self._udp_port = udp_port
         self._community_string = community_string
@@ -141,7 +140,7 @@ class PDU(PowerManagement, ABC):
         asyncio.run(self.set_transport_target(self._ip, self._udp_port))
         result = asyncio.run(
             set_cmd(
-                self._snmp_engine,
+                SnmpEngine(),
                 CommunityData(self._community_string),
                 self._transport_target,
                 ContextData(),
