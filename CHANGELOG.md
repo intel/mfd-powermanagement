@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.12.2 (2026-04-08)
+
+### Bug Fixes
+
+- Remove pyasn1 from requirements.
+  ([`1ea0ee0`](https://github.com/intel/mfd-powermanagement/commit/1ea0ee0273631b9786ba0527d46f8c5c6d02e239))
+
+
 ## v1.12.1 (2026-01-08)
 
 ### Bug Fixes
